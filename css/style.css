@@ -241,15 +241,13 @@ li.selected {
 #chat h1 small strong a{
     color: white;
 }
-#chat h1 small{
-    position: relative;
-}
 
-#chat h1 img{
+
+.star{
     position: absolute;
     height: 30px;
     right: 16px;
-    top: 10px;
+    top: 16px;
 } 
 
 /*Emojis*/

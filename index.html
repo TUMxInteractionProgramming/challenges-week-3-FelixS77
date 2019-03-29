@@ -77,17 +77,17 @@
     <!-- #4 #sweat #tab-bar -->
     <div id="tab-bar">
         <!-- #4 #tab-bar selected channel should be #highlighted -->
-        <button class="selected">
+        <button class="selected" id="bulb" onclick="selectTab('bulb')">
             <!-- #3 #tab-bar #channel-meta -->
             <img src="http://ip.lfe.mw.tum.de/sections/lightbulb-o.png" alt="Bulb">
             New
         </button>
-        <button>
+        <button id="fire" onclick="selectTab('fire')">
             <!-- #3 #tab-bar #channel-meta -->
             <img src="http://ip.lfe.mw.tum.de/sections/fire.png" alt="Hot">
             Trending
         </button>
-        <button>
+        <button id="star" onclick="selectTab('star')">
             <!-- #3 #tab-bar #channel-meta -->
             <img src="http://ip.lfe.mw.tum.de/sections/star.png" alt="Star">
             Favorites
@@ -108,7 +108,6 @@
                 </a>
             </strong>
         </small>               
-        <img src="http://ip.lfe.mw.tum.de/sections/star.png" alt="starred">
 
     </h1>
     <div id="messages">
@@ -223,6 +222,8 @@
      
      
 </div>
+<img class="star" src="http://ip.lfe.mw.tum.de/sections/star.png" alt="starred" onclick="markStar()">
+
 
 </body>
 </html>
