@@ -30,7 +30,6 @@ body {
 }
 
 #chat{  
-    background-color: white; 
     position: absolute;
     top: 0;
     right: 0;
@@ -238,6 +237,21 @@ li.selected {
     margin-left: 17.5%;
 }
 
+/*chat appbar*/
+#chat h1 small strong a{
+    color: white;
+}
+#chat h1 small{
+    position: relative;
+}
+
+#chat h1 img{
+    position: absolute;
+    height: 30px;
+    right: 16px;
+    top: 10px;
+} 
+
 /*Emojis*/
 #emojis{
     margin-left: 16px;
@@ -252,5 +266,5 @@ li.selected {
     position: absolute;
     left: 16px;
     bottom: 60px;
-
+    display: none;
 }
