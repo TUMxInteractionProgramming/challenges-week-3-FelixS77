@@ -17,6 +17,25 @@ body {
     background-color: #F5F5F5;
 }
 
+/* Applying split screen view */
+
+#channels{
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 60%;
+    height: 100vh;
+
+}
+
+#chat{   
+    position: absolute;
+    top: 0;
+    right: 0;
+    left:40%;
+    height: 100vh;
+}
+
 /* #4 # sweat #uppercase buttons and w3w locations */
 button, strong {
     text-transform: uppercase;
@@ -28,12 +47,45 @@ button, strong {
 
 /* #4 #sweat address both #app-bar s */
 h1 {
+    /*reused font-type, font-weight*/
+    height:56px;
+    width: 100%;
+    line-height: 56px;
+    padding: 3px 16px 3px 16px;
     background-color: #3F51B5;
     color: white;
+    font-size: 20px;
+    letter-spacing: 0.15px;
+    position:fixed;
+
+}
+
+/*Aligning Moocus to bottom of app-bar*/
+h1 img{
+    height : 56px;
+    position: absolute;
+    left: 16px;
+    bottom: 0;
+}
+
+/*Leaving space for Moocus image*/
+#channels h1{
+    padding-left: 72px;
 }
 
 
+
+
 /* CHANNELS LIST */
+/*channel-area between app-bar and tab-bar*/
+#channel-list{
+    position: absolute;
+    top:62px;
+    bottom: 72px;
+    overflow: auto;
+    width: 100%;
+}
+
 
 /* #4 #sweat #channels */
 ul {
@@ -59,31 +111,52 @@ li.selected {
     border-left: 4px solid #3F51B5;
 }
 
-li img {
+.channel-meta img {
     /* #4 #middle vertical alignment of icons in the #channels list */
-    vertical-align: middle;
+    vertical-align: middle;    
+}
+/*shift images to the right of channel-tiles*/
+.channel-meta{
+    display: inline;
+    position: absolute;
+    right: 0px;
 }
 
 /* TAB BAR */
 
 /* #4 #sweat #tab-bar */
-#tab-bar {
+#tab-bar , #chat-bar{
+    height: 72px;
+    width: 100%;
     /* #3 #tab-bar #container should be white */
     background-color: white;
     /* #3 #tab-bar #container has all buttons centered */
     text-align: center;
+    /*alignment to bottom of page*/
+    position:absolute;
+    bottom: 0;
+    /*applying flex box properties*/
+    display: flex;
 }
 
 /* #4 add styles to #tab-bar #buttons */
-#tab-bar button {
+#tab-bar button , #chat-bar button{
     background-color: white;
     border: none;
+    width:33%;
     font-size: 13px;
-
-    /* #4 #tab-bar buttons have a width of #one-third of the available space */
-    width: 33%;
     height: 72px;
     padding: 16px;
+
+    justify-content: space-between;
+}
+
+/*Overriting chat-bar button*/
+#chat-bar button{
+    justify-content: none;
+    position: relative;
+    left: 0;
+    width: 60px;
 }
 
 /* #4 #tab-bar buttons do have a #line-break and images are centered due to the left&right auto margin */
@@ -99,8 +172,16 @@ li img {
 }
 
 
+
 /* MESSAGES */
 /* #4 select #specific #messages by class and re-assign element styles according to their #hierarchy in a nested way */
+#messages{
+    position: absolute;
+    top:62px;
+    bottom: 72px;
+    overflow: auto;
+    width: 100%;
+}
 .message {
     /* #3 #chat #width*/
     width: 80%;
@@ -115,27 +196,39 @@ li img {
 
 .message h3 {
     font-size: medium;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
 }
 
 .message h3 em {
     font-size: larger;
     font-style: normal;
+    width: 20%;
 }
 
 .message h3 a {
     /* #3 #chat #link color is primary text */
     color: black;
+    width: 40%;
+    overflow: hidden;
 }
 
 .message p {
     background-color: white;
     padding: 16px;
+    position:relative;
 }
 
 .message button {
     background-color: #CDDC39;
     color: black;
     text-transform: uppercase;
+    /*adjust position of buttons*/
+    position: absolute;
+    right:8px; 
+    bottom: 8px;   
+    
 }
 
 /* #4 left align own #messages using #margins */
@@ -143,3 +236,19 @@ li img {
     margin-left: 17.5%;
 }
 
+/*Emojis*/
+#emojis{
+    margin-left: 16px;
+    padding:16px;
+    background-color: white;
+    border:1px solid black;
+    height:200px;
+    width:200px;
+    font: 28px;
+    text-align: left;
+    overflow:auto;
+    position: absolute;
+    left: 16px;
+    bottom: 60px;
+
+}
